@@ -1,5 +1,6 @@
 <div class="row">
 
+    <!-- Todos los Personajes -->
     <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
         <div class="card">
             <div class="image">
@@ -14,22 +15,21 @@
             <div class="card-inner">
                 <div class="header">
                     <a [routerLink]="['/character-details', character.id]">
-                        <h2>character.name</h2>
+                        <h2>{{ character.name }}</h2>
                     </a>
                     <h4 class="text-muted">
-                        character.gender
+                        {{character.gender}}
                     </h4>
                     <small class="text-muted">
-                        character.created
+                        {{character.created}}
                     </small>
                 </div>
             </div>
         </div>
-        All Characters
     </div>
 
     <!-- Sin resultados -->
-    <div class="col-xs-12 col-sm-12 col-md-12 container-notFound">
+    <div class="col-xs-12 col-sm-12 col-md-12 container-notFound" *ngIf="characters.length <= 0">
         <p>No Results</p>
     </div>
 </div>
