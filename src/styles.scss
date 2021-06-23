@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+// ABSTRACTS
+@import 'assets/scss/abstracts/variables';
+
+// BASE
+@import 'assets/scss/base/reset';
+@import 'assets/scss/base/typography';
+
+// LAYOUT
+@import 'assets/scss/layout/header';
+@import 'assets/scss/layout/footer';
