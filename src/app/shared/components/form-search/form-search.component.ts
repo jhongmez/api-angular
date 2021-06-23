@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-search',
-  templateUrl: './form-search.component.html',
-  styleUrls: ['./form-search.component.scss']
+  templateUrl: './form-search.component.html'
 })
 export class FormSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSearch(value: string) {
+
+    if(value && value.length > 3) {
+      console.log(`Buscando ${value}`)
+      this.router.navigate(['/character-list'], {
+        queryParams: { q:value }
+      });
+    }
+
   }
 
 }
